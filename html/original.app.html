@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>Original Cozzle</title>
+
+    <!-- styles ... loaded statically for now -->
+    <!-- : : Twitter Bootstrap : : -->
+    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap-theme.css" type="text/css" />
+
+    <!-- ... and this App -->
+    <link rel="stylesheet" href="../style/original.css" type="text/css" />
+
+    <!-- loader -->
+    <script data-main="../cozzle/apps/original/main.js" src="../lib/requirejs/require.js"></script>
+
+</head>
+<body>
+    <div id="content">
+
+        <div id="gameContainer" class="container">
+
+            <!-- Game Header -->
+            <div id="gameHeader" class="row">
+
+                <div id="gameTitle" class="col-xs-3"><span data-bind="text:Title"></span></div>
+
+                <div id="gameStats" class="col-xs-6 text-center">
+                    <span class="statLabel">Guesses:</span> <span data-bind="text:Guesses"></span>
+                    <span class="statLabel">Incorrect:</span> <span data-bind="text:Incorrect" class="incorrectCount"></span>
+                </div>
+
+                <div id="gameTime" class="col-xs-3 text-right"><span data-bind="text:FormattedGameTime"></span></div>
+            </div>
+
+            <!-- Instructions Panel -->
+            <div id="instructionPanel" class="row">
+
+                <div class="col-xs-9 text-instruction">
+                    Blend two colors to form the active color. Pick a color from each control pad group below.
+                </div>
+
+                <div class="col-xs-3 text-right">
+                    <button type="button" class="btn btn-default" data-bind="click:NewGame()">New Game</button>
+                </div>
+
+            </div>
+
+            <div id="boardRow" class="row">
+                <div class="col-xs-12 padding0">
+
+                    <div class="width100" data-bind="cozzleBoard:BoardState"></div>
+
+                </div>
+            </div>
+
+            <div id="controlPad" class="row">
+                <div class="col-xs-5">
+                    <div class="lrPad" data-bind="cozzlePad:LeftPadState"></div>
+                </div>
+                <div class="col-xs-2 padding0">
+                    <svg width="100%" height="100%">
+                        <rect width="80%" height="100%" x="10%" y="7%" data-bind="attr: { fill: PreviewColor }"></rect>
+                    </svg>
+                    <!--<div class="width100" data-bind="cozzleBoard:Positions"></div>-->
+                </div>
+                <div class="col-xs-5">
+                    <div class="lrPad" data-bind="cozzlePad:RightPadState"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Development Only: Live Reload Script. TODO remove this from production app -->
+    <script src="//localhost:35729/livereload.js"></script>
+
+</body>
+</html>

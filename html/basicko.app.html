@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+
+    <title>Basic Ko</title>
+
+    <!-- styles ... loaded statically for now -->
+
+    <!-- : : Twitter Bootstrap : : -->
+    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap-theme.css" type="text/css" />
+
+    <!-- ... and this App -->
+    <link rel="stylesheet" href="../style/basicko.css" type="text/css" />
+
+    <!-- loader -->
+    <script data-main="../cozzle/apps/basicko/main.js" src="../lib/requirejs/require.js"></script>
+
+</head>
+<body>
+    <div id="content">
+        <h1 data-bind="customText:GameName">Some Game</h1>
+        <div id="gameBody" data-bind="colorGrid:GridColors"></div>
+        <button data-bind="click:ChangeGridColors">Change</button>
+    </div>
+
+    <!-- Development Only: Live Reload Script. TODO remove this from production app -->
+    <script src="//localhost:35729/livereload.js"></script>
+
+</body>
+</html>
